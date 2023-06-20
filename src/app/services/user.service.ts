@@ -11,13 +11,47 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
 
-  logIn(body: User): Observable<any> {
+  signup(body: User): Observable<any> {
+    return this.http.post<any>('/api/signup', body);
+  }
+
+  login(body: User): Observable<any> {
     return this.http.post<any>('/api/login', body);
+  }
+
+  randomTip(parameters: User): Observable<any> {
+    return this.http.get<any>('/api/random');
+  }
+
+  getUserData(): Observable<any> {
+    const headers = {
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+  };
+  
+    return this.http.get<any>('/api/data',{headers});
+  }
+
+  getAchievements(): Observable<any> {
+    const headers = {
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+  };
+  
+    return this.http.get<any>('/api/achiviement',{headers});
+  }
+
+  getMedals(): Observable<any> {
+    const headers = {
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+  };
+  
+    return this.http.get<any>('/api/medals',{headers});
+  }
   }
 
 
 
-}
+
+
 
 
 
