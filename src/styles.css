@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
+*{
+    transition: all 0.15s ease-out;
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    -ms-transition: all 0.15s ease-out;
+    -o-transition: all 0.15s ease-out;
+}
+
 h2, h3, h4, h1{
     font-family: 'Lilita One';
 }
