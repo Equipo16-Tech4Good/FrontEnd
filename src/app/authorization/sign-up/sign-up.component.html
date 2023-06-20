@@ -46,13 +46,16 @@
             </div>
             <div class="col-md-12">
               <div class="form-group buttons">
-                  <button [disabled]="validateSubmit() || !(signupFrom.valid && signupFrom.dirty)" class="btn btn-primary  col-md-5">Login</button>
+                  <button (click)="authenticate()" [disabled]="validateSubmit() || !(signupFrom.valid && signupFrom.dirty)" class="btn btn-primary  col-md-5">Login</button>
                   <button type="button" class="btn btn-danger col-md-5" (click)="returnLandigPage()">Cancel</button>
                   <div class="clearfix"></div>
               </div>
             </div>
         </div>
-        <!-- (click)="authenticate()" -->
+        
+          <span>{{message}}</span>
+        
+        
         </div>
     </form>
 </div>
