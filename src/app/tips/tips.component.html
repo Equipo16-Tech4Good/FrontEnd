@@ -1,1 +1,13 @@
-<p>tips works!</p>
+<h1 class="text-center mt-5">CONSEJOS PARA LA MEJORA</h1>
+
+
+    <button class="btn btn-primary"><a routerLink="/home">VOLVER ATRÁS</a></button> 
+
+<div *ngFor="let tip of tips, let i = index" class="cards">
+    <div class="card col-md-6" >
+        <img src="../../assets/img_agua/agua{{i}}.jpg" class="card-img-top" alt="Sunset Over the Sea"/>
+        <div class="card-body">
+        <h5 class="card-text">{{tip}}</h5>
+        </div>
+    </div>
+</div> 

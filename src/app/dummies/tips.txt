@@ -1,0 +1,16 @@
+{"tips":[
+    "Mientras te cepilas los dientes, recuerda cerrar el grifo para ahorrar agua.",
+    "Tomemos duchas rápidas y divertidas, así ahorraremos agua y tiempo.",
+    "Juega con cubetas de agua en lugar de mangueras. Puedes divertirte y refrescarte con menos agua.",
+    "Eres un defensor del agua, cuida de ella y enseña a otros a hacerlo también.",
+    "Toma duchas cortas y divertidas. Intenta no demorarte demasiado debajo de la regadera para ahorrar agua.",
+    "Cierra el grifo mientras te lavas los dientes o te enjabonas las manos. Así no desperdiciarás agua.",
+    "No abras el grifo a máxima poténcia, con la mitad es suficiente",
+    "Reutiliza el agua. Por ejemplo, si tienes agua de una botella que ya no vas a tomar, puedes usarla para regar tus plantas en lugar de tirarla.",
+    "Usa el boton pequeño del lavabo, cuando hagas pipí",
+    "No llenes la bañera hasta arriba. Si te estás bañando, no es necesario que llenes la bañera por completo. Usa solo la cantidad de agua necesaria.",
+    "Utiliza una jarra de agua en el refrigerador. En lugar de dejar el grifo abierto para obtener agua fría, puedes llenar una jarra y guardarla en el refrigerador.",
+    "Recoge el agua de lluvia para regar las plantas. Coloca recipientes afuera durante la lluvia y úsala para cuidar tus plantas.",
+    "Repara las fugas. Si ves que hay una gotera en el grifo o en el inodoro, avisa a un adulto para que lo repare y no se desperdicie agua.",
+    "Riega las plantas en la mañana o en la noche. El agua se evaporará menos y las plantas podrán aprovecharla mejor."
+]}

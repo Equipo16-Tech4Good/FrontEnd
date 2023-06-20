@@ -25,7 +25,7 @@ export class UserService {
     return this.http.post<any>('/api/login', body);
   }
 
-  randomTip(parameters: any): Observable<any> {
+  randomTip(): Observable<any> {
     return this.http.get<any>('/api/random');
   }
 

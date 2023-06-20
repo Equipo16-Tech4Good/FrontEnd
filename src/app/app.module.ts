@@ -8,7 +8,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SignUpComponent } from './authorization/sign-up/sign-up.component';
 import { AuthorizationModule } from './authorization/authorization.module';
 import { TipsComponent } from './tips/tips.component';
 import { PatoComponent } from './pato/pato.component';
