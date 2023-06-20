@@ -1,0 +1,28 @@
+.bar-logo {
+    background: linear-gradient(270deg, #3dc5db, #2a78ae);
+    background-size: 400% 400%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    -o-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+    padding: 20px;
+}
+.container {
+    right: 0px;
+    min-width: 100%;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+.text-container {
+    min-height: 227px;
+    text-decoration: none;
+}
+.container-fluid {
+    padding-top: 40px;
+}

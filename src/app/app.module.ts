@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './authorization/sign-up/sign-up.component';
@@ -24,8 +22,6 @@ import { LogrosComponent } from './logros/logros.component';
     AppComponent,
     HomePageComponent,
     LandingPageComponent,
-    FooterComponent,
-    HeaderComponent,
     TipsComponent,
     PatoComponent,
     MedallasComponent,
