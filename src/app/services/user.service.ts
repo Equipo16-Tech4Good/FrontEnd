@@ -14,18 +14,18 @@ export class UserService {
   loggedIn:boolean=false
   url = environment.apiURL
 
-  signup(body: User): Observable<any> {
-    return this.http.post<any>(this.url+'/prueba/signUp', body,{
-      headers:new HttpHeaders().set('Content-Type', 'application/jsson')
+  signup(body: any): Observable<any> {
+    return this.http.post<any>(this.url + '/prueba/signUp', body,{
+      headers:new HttpHeaders().set('Content-Type', 'application/json')
     });
 
   }
 
-  login(body: User): Observable<any> {
+  login(body: any): Observable<any> {
     return this.http.post<any>('/api/login', body);
   }
 
-  randomTip(parameters: User): Observable<any> {
+  randomTip(parameters: any): Observable<any> {
     return this.http.get<any>('/api/random');
   }
 

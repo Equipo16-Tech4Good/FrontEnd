@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalConstants } from '../../shared/globar_constants';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { User } from 'src/app/interfaces/user.interface';
-
 
 @Component({
   selector: 'app-sign-up',
@@ -15,8 +13,6 @@ export class SignUpComponent implements OnInit {
 
   signupFrom:any = FormGroup;
   responseMessage:any;
-
-  //falta importar el service y añadirlo en el constructor
 
   constructor(private formBuilder:FormBuilder, private router:Router, private userServ:UserService) { }
 
@@ -44,27 +40,18 @@ export class SignUpComponent implements OnInit {
 
 
   authenticate(){
-    const userFull=this.signupFrom.value
-    const user:User={
+    const userFull=this.signupFrom.value;
+    const user = {
       name:userFull.name,
       email:userFull.email,
-      password:userFull.password
+      password:userFull.password,
     }
 
-    this.userServ.signup(user)
-    .subscribe(resp=>{alert(JSON.stringify(resp.message,null,4))
-      this.message=resp.message
-      if(resp.status===200) {
-          this.userServ.loggedIn=true
-          this.router.navigate(['login'])
-           }
-                    })
-       
-      };
-  
-
-
-  }
+    this.userServ.signup(user).subscribe(resp=>{
+      this.message=resp?.message
+    })   
+  }; 
+}
 
 
 
