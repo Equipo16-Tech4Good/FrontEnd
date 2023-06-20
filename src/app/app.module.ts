@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignUpComponent } from './authorization/sign-up/sign-up.component';
+import { AuthorizationModule } from './authorization/authorization.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthorizationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

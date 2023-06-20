@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalConstants } from '../../shared/globar_constants';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -9,22 +11,24 @@ import { GlobalConstants } from '../../shared/globar_constants';
 })
 export class SignUpComponent implements OnInit {
 
-  password = true;
-  confirmPassword = true;
   signupFrom:any = FormGroup;
   responseMessage:any;
 
   //falta importar el service y añadirlo en el constructor
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
     this.signupFrom = this.formBuilder.group({
       name: [null, [Validators.required, Validators.pattern(GlobalConstants.nameRegex)]],
       email: [null, [Validators.required, Validators.pattern(GlobalConstants.emailRegex)]],
-      password: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      password: [null, [Validators.required]],
       confirmPassword: [null, [Validators.required]]
     });
+  }
+
+  returnLandigPage(){
+    this.router.navigate(['/']);
   }
 
   validateSubmit(){
