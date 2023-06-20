@@ -3,10 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalConstants } from '../../shared/globar_constants';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-import { User } from 'src/app/interfaces/user.interface';
-
-import { tap, catchError } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-sign-up',
@@ -17,8 +13,6 @@ export class SignUpComponent implements OnInit {
 
   signupFrom:any = FormGroup;
   responseMessage:any;
-
-  //falta importar el service y añadirlo en el constructor
 
   constructor(private formBuilder:FormBuilder, private router:Router, private userServ:UserService) { }
 
@@ -46,50 +40,17 @@ export class SignUpComponent implements OnInit {
 
 
   authenticate(){
-    const userFull=this.signupFrom.value
+    const userFull=this.signupFrom.value;
     const user = {
       name:userFull.name,
       email:userFull.email,
-      password:userFull.password
+      password:userFull.password,
     }
 
     this.userServ.signup(user).subscribe(resp=>{
       this.message=resp?.message
-      if(resp?.http != 200){
-        this.message = "algo ha ido mal";
-      }
-      })
-       
+    })   
   }; 
-
-  handleSuauthenticatebmit(){
-    var formData = this.signupFrom.value;
-    var data = {
-      name:formData.name,
-      email:formData.email,
-      password:formData.password
-    }
-
-    
-    this.userServ.signup(data).pipe(
-      tap((response: any) => {
-        this.responseMessage = response?.message;
-        this.router.navigate(['/']);
-      }),
-      catchError((error) => {
-        if (error.error?.message)
-          this.responseMessage = error.error?.message;
-        else
-          this.responseMessage = GlobalConstants.gerericError;
-        throw error; // Rethrow the error to propagate it further
-      })
-    ).subscribe();
-
-    
-
-     
-
-  }
 }
 
 

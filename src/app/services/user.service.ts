@@ -21,11 +21,11 @@ export class UserService {
 
   }
 
-  login(body: User): Observable<any> {
+  login(body: any): Observable<any> {
     return this.http.post<any>('/api/login', body);
   }
 
-  randomTip(parameters: User): Observable<any> {
+  randomTip(parameters: any): Observable<any> {
     return this.http.get<any>('/api/random');
   }
 

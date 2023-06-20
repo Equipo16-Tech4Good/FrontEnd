@@ -1,6 +1,6 @@
 
 <div class="form">
-    <h1 class="text-center mt-5">LOGIN</h1>
+    <h1 class="text-center mt-5">SIGN UP</h1>
     <form name="myForm" [formGroup]="signupFrom">
        <div class="login-container">
         <div class="row">
@@ -52,10 +52,9 @@
               </div>
             </div>
         </div>
-        
-          <span>{{message}}</span>
-        
-        
+          <div *ngIf="message != ''" class="alert alert-warning message">
+            <span>{{message}}</span>
+          </div>        
         </div>
     </form>
 </div>

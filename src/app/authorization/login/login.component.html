@@ -1,1 +1,41 @@
-<p>login works!</p>
+
+<div class="form">
+    <h1 class="text-center mt-5">LOGIN</h1>
+    <form name="myForm" [formGroup]="loginFrom">
+       <div class="login-container">
+        <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" name="email" formControlName="email" required class="form-control">
+                  <div *ngIf="loginFrom.controls.email.touched && loginFrom.controls.email.invalid">
+                    <span *ngIf="loginFrom.controls.email.errors.required" class="error">Este campo es obligatorio</span>
+                    <span *ngIf="loginFrom.controls.email.errors.pattern" class="error">Formato de email inválido</span>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                  <label>Contraseña</label>
+                  <input type="password" name="pass" formControlName="password" required class="form-control">
+                  <div *ngIf="loginFrom.controls.password.touched && loginFrom.controls.password.invalid">
+                    <span *ngIf="loginFrom.controls.password.errors.required" class="error">Este campo es obligatorio</span>
+                    <span *ngIf="loginFrom.controls.password.errors.pattern" class="error">Formato inválido</span>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group buttons">
+                  <button (click)="login()" [disabled]="!(loginFrom.valid && loginFrom.dirty)" class="btn btn-primary  col-md-5">Login</button>
+                  <button type="button" class="btn btn-danger col-md-5" (click)="returnLandigPage()">Cancel</button>
+                  <div class="clearfix"></div>
+              </div>
+            </div>
+        </div>
+          <div *ngIf="message != ''" class="alert alert-warning message">
+            <span>{{message}}</span>
+          </div>        
+        </div>
+    </form>
+</div>
+        
