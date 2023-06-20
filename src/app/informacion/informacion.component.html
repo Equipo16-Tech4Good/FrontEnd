@@ -1,1 +1,11 @@
-<p>informacion works!</p>
+<div class="general-container">
+    <div class="px-5 container-fluid pt-5 mb-5">
+        <div class="text-center mb-5"><h1 class="title">¿SABIAS QUÉ?</h1></div>
+        <div class="mt-5">
+            <div *ngFor="let info of displayInfo" class="bg-light rounded-pill border border-3 border-primary d-flex align-items-center gap-3 mb-2 p-3">
+                <img src="../../assets/informacion.png" alt="info" style="max-height: 50px;">
+                <h4>{{info.text}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
