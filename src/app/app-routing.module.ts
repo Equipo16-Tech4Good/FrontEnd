@@ -4,6 +4,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SignUpComponent } from './authorization/sign-up/sign-up.component';
 import { LoginComponent } from './authorization/login/login.component';
+import { InformacionComponent } from './informacion/informacion.component';
+import { LogrosComponent } from './logros/logros.component';
 import { MedallasComponent } from './medallas/medallas.component';
 
 const routes: Routes = [
@@ -34,6 +36,14 @@ const routes: Routes = [
   {
     path:'**',
     redirectTo:'landing'
+  },
+  {
+    path:'informacion',
+    component: InformacionComponent
+  },
+  {
+    path:'logros',
+    component:LogrosComponent
   },
 ];
 

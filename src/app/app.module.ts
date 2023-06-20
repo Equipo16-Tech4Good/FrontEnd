@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './authorization/sign-up/sign-up.component';
 import { AuthorizationModule } from './authorization/authorization.module';
@@ -23,8 +22,6 @@ import { LogrosComponent } from './logros/logros.component';
     AppComponent,
     HomePageComponent,
     LandingPageComponent,
-    
-  
     TipsComponent,
     PatoComponent,
     MedallasComponent,
