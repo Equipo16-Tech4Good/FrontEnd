@@ -14,18 +14,20 @@ export class UserService {
   loggedIn:boolean=false
   url = environment.apiURL
 
-  signup(body: User): Observable<any> {
+  signup(body: any): Observable<any> {
     return this.http.post<any>(this.url+'/prueba/signUp', body,{
-      headers:new HttpHeaders().set('Content-Type', 'application/jsson')
+      headers:new HttpHeaders().set('Content-Type', 'application/json')
     });
 
   }
 
-  login(body: User): Observable<any> {
-    return this.http.post<any>('/api/login', body);
+  login(body: any): Observable<any> {
+    return this.http.post<any>('/api/login', body,{
+      headers:new HttpHeaders().set('Content-Type', 'application/json')
+    });
   }
 
-  randomTip(parameters: User): Observable<any> {
+  randomTip(parameters: any): Observable<any> {
     return this.http.get<any>('/api/random');
   }
 
@@ -56,33 +58,3 @@ export class UserService {
 
 
 
-
-
-
-
-
-
-// signUp(userInput: Users) {
-//     if (
-//       !this._userRepository.find((user) => user.userName === userInput.userName) &&
-//       !this._userRepository.find((user) => user.userMail === userInput.userMail)
-//     ) {
-//       this._userRepository.push(userInput);
-//       localStorage.setItem('users', JSON.stringify(this._userRepository));
-//       this.route.navigate(['starshipList'])
-//       this._logInUser=`Bienvenido ${userInput.userName}`
-//       this._loggedIn=true
-//      } else alert('el usuario o email ya existen');
-//   }
-  
-//   logIn(name:string,password:string) {
-    
-//     if (
-//       this._userRepository.find((user) => user.userName === name) &&
-//       this._userRepository.find((user) => user.userpassword === password)
-//     ) {
-//       this.route.navigate(['starshipList'])
-//       this._logInUser=`Bienvenido ${name}`
-//       this._loggedIn=true
-//     } else alert('el usuario o contraseña es incorrecto');
-//   }
