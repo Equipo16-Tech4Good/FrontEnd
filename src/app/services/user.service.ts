@@ -35,18 +35,20 @@ export class UserService {
     /* const headers = {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
     }; */
-    let token = localStorage.getItem('token');
-  
-    return this.http.get<any>(this.url + '/api/Usuarios/GetUsuario/token_' + token);
+    return this.http.get<any>(this.url + '/api/Usuarios/GetUsuario/token_' + this.getToken());
+  }
+
+  updateUserData(body:any): Observable<any> {
+    return this.http.post<any>(this.url + '/api/Usuarios/Update', body, {
+      headers:new HttpHeaders().set('Content-Type', 'application/json')
+    });
   }
 
   getAchievements(): Observable<any> {
     /* const headers = {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
     }; */
-    let token = localStorage.getItem('token');
-  
-    return this.http.get<any>(this.url + '/api/UsuarioLogroes/GetByToken/token_' + token);
+    return this.http.get<any>(this.url + '/api/UsuarioLogroes/GetByToken/token_' + this.getToken());
   }
 
   getMedals(): Observable<any> {
@@ -56,6 +58,15 @@ export class UserService {
 
     let token = localStorage.getItem('token');
   
-    return this.http.get<any>(this.url + '/api/Medallas/GetByToken/token_' + token);
+    return this.http.get<any>(this.url + '/api/Medallas/GetByToken/token_' + this.getToken());
   }
+
+  setToken(token:string):  void {
+    return  localStorage.setItem('token', token );
   }
+
+  getToken():string | null {
+    return  localStorage.getItem('token');
+  }
+
+}

@@ -38,6 +38,10 @@ export class LoginComponent implements OnInit {
 
     this.userServ.login(user).subscribe(resp=>{
       this.message=resp?.mensaje
+      if(resp?.status == 200){
+        this.userServ.setToken(resp?.data);
+        this.router.navigate(['/home']);
+      }
     })   
   };
 
