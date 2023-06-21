@@ -48,7 +48,7 @@ export class SignUpComponent implements OnInit {
     }
 
     this.userServ.signup(user).subscribe(resp=>{
-      this.message=resp?.message
+      this.message=resp?.mensaje
     })   
   }; 
 }

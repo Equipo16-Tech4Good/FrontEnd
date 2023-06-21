@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.userServ.login(user).subscribe(resp=>{
-      this.message=resp?.message
+      this.message=resp?.mensaje
     })   
   };
 
