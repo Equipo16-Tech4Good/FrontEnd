@@ -29,6 +29,10 @@ export class SignUpComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  redirectLogin(){
+    this.router.navigate(['/login']);
+  }
+
   validateSubmit(){
     if(this.signupFrom.controls['password'].value != this.signupFrom.controls['confirmPassword'].value)
       return true;
@@ -49,8 +53,13 @@ export class SignUpComponent implements OnInit {
 
     this.userServ.signup(user).subscribe(resp=>{
       this.message=resp?.mensaje
+      if(resp?.status == 200){
+        setTimeout(this.redirectLogin, 4000);
+      }   
     })   
-  }; 
+  };
+
+  
 }
 
 

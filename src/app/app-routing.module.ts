@@ -8,6 +8,7 @@ import { TipsComponent } from './tips/tips.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { LogrosComponent } from './logros/logros.component';
 import { MedallasComponent } from './medallas/medallas.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path:'medallas',
     component:MedallasComponent
+  },
+  {
+    path:'test',
+    component:TestComponent
   },
   {
     path:'**',
