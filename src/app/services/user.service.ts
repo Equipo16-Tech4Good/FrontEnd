@@ -14,75 +14,59 @@ export class UserService {
   loggedIn:boolean=false
   url = environment.apiURL
 
-  signup(body: User): Observable<any> {
-    return this.http.post<any>(this.url+'/prueba/signUp', body,{
-      headers:new HttpHeaders().set('Content-Type', 'application/jsson')
+  signup(body: any): Observable<any> {
+    return this.http.post<any>(this.url + '/api/Usuarios/SingUp', body,{
+      headers:new HttpHeaders().set('Content-Type', 'application/json')
     });
 
   }
 
-  login(body: User): Observable<any> {
-    return this.http.post<any>('/api/login', body);
+  login(body: any): Observable<any> {
+    return this.http.post<any>(this.url + '/api/Usuarios/Login', body,{
+      headers:new HttpHeaders().set('Content-Type', 'application/json')
+    });
   }
 
-  randomTip(parameters: User): Observable<any> {
-    return this.http.get<any>('/api/random');
+  randomTip(): Observable<any> {
+    return this.http.get<any>(this.url + '/api/Mensajes/RandomTip');
   }
 
   getUserData(): Observable<any> {
-    const headers = {
+    /* const headers = {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
-  };
-  
-    return this.http.get<any>('/api/data',{headers});
+    }; */
+    return this.http.get<any>(this.url + '/api/Usuarios/GetUsuario/token_' + this.getToken());
+  }
+
+  updateUserData(body:any): Observable<any> {
+    return this.http.post<any>(this.url + '/api/Usuarios/Update', body, {
+      headers:new HttpHeaders().set('Content-Type', 'application/json')
+    });
   }
 
   getAchievements(): Observable<any> {
-    const headers = {
+    /* const headers = {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
-  };
-  
-    return this.http.get<any>('/api/achiviement',{headers});
+    }; */
+    return this.http.get<any>(this.url + '/api/UsuarioLogroes/GetByToken/token_' + this.getToken());
   }
 
   getMedals(): Observable<any> {
-    const headers = {
+   /*  const headers = {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
-  };
+    }; */
+
+    let token = localStorage.getItem('token');
   
-    return this.http.get<any>('/api/medals',{headers});
+    return this.http.get<any>(this.url + '/api/Medallas/GetByToken/token_' + this.getToken());
   }
+
+  setToken(token:string):  void {
+    return  localStorage.setItem('token', token );
   }
 
+  getToken():string | null {
+    return  localStorage.getItem('token');
+  }
 
-
-
-
-
-
-
-
-// signUp(userInput: Users) {
-//     if (
-//       !this._userRepository.find((user) => user.userName === userInput.userName) &&
-//       !this._userRepository.find((user) => user.userMail === userInput.userMail)
-//     ) {
-//       this._userRepository.push(userInput);
-//       localStorage.setItem('users', JSON.stringify(this._userRepository));
-//       this.route.navigate(['starshipList'])
-//       this._logInUser=`Bienvenido ${userInput.userName}`
-//       this._loggedIn=true
-//      } else alert('el usuario o email ya existen');
-//   }
-  
-//   logIn(name:string,password:string) {
-    
-//     if (
-//       this._userRepository.find((user) => user.userName === name) &&
-//       this._userRepository.find((user) => user.userpassword === password)
-//     ) {
-//       this.route.navigate(['starshipList'])
-//       this._logInUser=`Bienvenido ${name}`
-//       this._loggedIn=true
-//     } else alert('el usuario o contraseña es incorrecto');
-//   }
+}

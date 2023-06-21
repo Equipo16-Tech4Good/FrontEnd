@@ -6,20 +6,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SignUpComponent } from './authorization/sign-up/sign-up.component';
 import { AuthorizationModule } from './authorization/authorization.module';
+import { TipsComponent } from './tips/tips.component';
+import { PatoComponent } from './pato/pato.component';
+import { MedallasComponent } from './medallas/medallas.component';
+import { InformacionComponent } from './informacion/informacion.component';
+import { TestComponent } from './test/test.component';
+import { LogrosComponent } from './logros/logros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LandingPageComponent,
-    FooterComponent,
-    HeaderComponent
+    TipsComponent,
+    PatoComponent,
+    MedallasComponent,
+    InformacionComponent,
+    TestComponent,
+    LogrosComponent
   ],
   imports: [
     BrowserModule,

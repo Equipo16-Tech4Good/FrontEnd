@@ -1,0 +1,27 @@
+/* .cards{
+    width: 90%;
+    display: flex;
+    justify-content:center;
+    margin: 5rem;
+}
+
+.card{
+    color:rgb(43, 71, 147);
+    font-size: larger;
+    width: 45%;
+} */
+
+button{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    padding: 1rem;
+    border-radius: 50px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+ 
