@@ -26,3 +26,15 @@
 .container-fluid {
     padding-top: 40px;
 }
+
+.header-button2 {
+    border-width: 3px;
+    background-color: white;
+    border-color: #D98E04;
+    color: #D98E04;
+}
+.button{
+    position: absolute;
+    right: 7rem;
+    top: 5rem;
+}

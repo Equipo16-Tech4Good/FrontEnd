@@ -53,3 +53,16 @@
 .title {
     font-size: 300%;
 }
+
+.button{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    padding: 1rem;
+    border-radius: 50px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
