@@ -1,4 +1,4 @@
-.cards{
+/* .cards{
     width: 90%;
     display: flex;
     justify-content:center;
@@ -9,7 +9,7 @@
     color:rgb(43, 71, 147);
     font-size: larger;
     width: 45%;
-}
+} */
 
 button{
     position: absolute;

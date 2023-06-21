@@ -18,6 +18,10 @@ export class TipsComponent implements OnInit {
     for(var i = 0; i < 4; i++){
       this.getTips();
     }
+    /* this.tips.push("122323533");
+    this.tips.push("wedwdwdf");
+    this.tips.push("232123");
+    this.tips.push("64fefbdfc"); */
   }
 
   getTips(){
@@ -27,6 +31,6 @@ export class TipsComponent implements OnInit {
       if(this.status != '200')
         this.error = "An error has occured"
     })
-  } 
+  }
 
 }

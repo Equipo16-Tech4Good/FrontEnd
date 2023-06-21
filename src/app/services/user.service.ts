@@ -15,41 +15,47 @@ export class UserService {
   url = environment.apiURL
 
   signup(body: any): Observable<any> {
-    return this.http.post<any>(this.url + '/prueba/signUp', body,{
+    return this.http.post<any>(this.url + '/api/Usuarios/SingUp', body,{
       headers:new HttpHeaders().set('Content-Type', 'application/json')
     });
 
   }
 
   login(body: any): Observable<any> {
-    return this.http.post<any>('/api/login', body);
+    return this.http.post<any>(this.url + '/api/Usuarios/Login', body,{
+      headers:new HttpHeaders().set('Content-Type', 'application/json')
+    });
   }
 
   randomTip(): Observable<any> {
-    return this.http.get<any>('/api/random');
+    return this.http.get<any>(this.url + '/api/Mensajes/RandomTip');
   }
 
   getUserData(): Observable<any> {
-    const headers = {
+    /* const headers = {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
-  };
+    }; */
+    let token = localStorage.getItem('token');
   
-    return this.http.get<any>('/api/data',{headers});
+    return this.http.get<any>(this.url + '/api/Usuarios/GetUsuario/token_' + token);
   }
 
   getAchievements(): Observable<any> {
-    const headers = {
+    /* const headers = {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
-  };
+    }; */
+    let token = localStorage.getItem('token');
   
-    return this.http.get<any>('/api/achiviement',{headers});
+    return this.http.get<any>(this.url + '/api/UsuarioLogroes/GetByToken/token_' + token);
   }
 
   getMedals(): Observable<any> {
-    const headers = {
+   /*  const headers = {
       Authorization: 'Bearer ' + localStorage.getItem('token'),
-  };
+    }; */
+
+    let token = localStorage.getItem('token');
   
-    return this.http.get<any>('/api/medals',{headers});
+    return this.http.get<any>(this.url + '/api/Medallas/GetByToken/token_' + token);
   }
   }
