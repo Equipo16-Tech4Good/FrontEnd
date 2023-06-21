@@ -2,6 +2,6 @@
 
 export const environment = {
   production: false,
-  apiURL:"http://localhost:7207"
+  apiURL:"https://localhost:7207"
 };
 

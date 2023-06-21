@@ -44,7 +44,7 @@ export class SignUpComponent implements OnInit {
     const user = {
       name:userFull.name,
       email:userFull.email,
-      password:userFull.password,
+      psswrd:userFull.password,
     }
 
     this.userServ.signup(user).subscribe(resp=>{

@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     const userFull=this.loginFrom.value;
     const user = {
       email:userFull.email,
-      password:userFull.password,
+      psswrd:userFull.password,
     }
 
     this.userServ.login(user).subscribe(resp=>{
